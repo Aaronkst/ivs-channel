@@ -5,7 +5,13 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/", (req, res) => res.json({ message: "Hello World!" }));
+app.get("/", (req, res) => {
+  try {
+    return res.status(200).json({ message: "Hello World!" });
+  } catch (e) {
+    return res.status(500).send(e);
+  }
+});
 
 // TODO: add authentication middleware logic
 app.post("/ivs", async (req, res) => {
@@ -25,7 +31,7 @@ app.post("/ivs", async (req, res) => {
     // response.streamKey.value
 
     const response = await client.send(command);
-    return res.json({ ...response });
+    return res.status(201).json({ ...response });
   } catch (e) {
     return res.status(500).send(e);
   }
