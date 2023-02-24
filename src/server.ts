@@ -3,7 +3,6 @@ import { app } from "./app";
 
 if (process.env.NODE_ENV === "production") {
   try {
-    console.log(serverless(app));
     module.exports.handler = serverless(app);
   } catch (e) {
     console.log(e);

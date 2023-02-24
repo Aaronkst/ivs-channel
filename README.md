@@ -20,8 +20,6 @@ yarn dev
 
 ## Production
 
-Directly running `yarn start` executes the build command in the background as a `prestart` hook.
-
 ```bash
 # build
 yarn build
