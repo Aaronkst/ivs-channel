@@ -1,0 +1,7 @@
+### Create Channel
+POST https://ht6cruf2g4bhbnb5nuc6ti2qf40rgkah.lambda-url.ap-northeast-1.on.aws/ivs
+Content-Type: application/json
+
+{
+  "name": "testing-from-lambda"
+}
