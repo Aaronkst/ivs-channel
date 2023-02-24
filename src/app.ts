@@ -5,7 +5,7 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/", (req, res) => res.send("Hello World!"));
+app.get("/", (req, res) => res.json({ message: "Hello World!" }));
 
 // TODO: add authentication middleware logic
 app.post("/ivs", async (req, res) => {
